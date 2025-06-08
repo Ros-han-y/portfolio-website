@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  background-color: #0A192F;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+   #header{
+    width: 100%;
+    height: 100vh;
+    background-image: url("image/presonalimg.png");
+    background-size: cover;
+    background-position: center;
+   }
+   
+   .container{
+    padding: 10px 10px;
+   }
+   
+   nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   }
+   
+   .logo{
+    width: 200px;
+   }
+
+   nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+   }
+   
+   nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+   }
+
+   nav ul li a::after{
+    content:'';
+    width: 0;
+    height: 3px;
+    background: rgb(230, 5, 43);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+   }
+
+   nav ul li a:hover::after{
+    width: 100%;
+   }
+
+   .header-text{
+margin-top: 5%;
+font-size: 30px;
+   }
+
+   .header-text h1{
+    font-size: 60px;
+    margin-top: 5%;
+   }
+
+   .header-text h1 span{
+    color:rgb(230, 5, 43) ;
+   }
+
+   #element{
+    color:rgb(230, 5, 43) ;
+   }
+   /* -----------About-------------------- */
+   #about{
+    padding: 80px 0;
+   }
+
+   .row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   }
+   
+   .col1{
+    flex-basis: 35%;
+   }
+
+   .col1 img{
+    width: 95%;
+    border-radius: 15px;
+   }
+   .col2{
+    flex-basis: 60%;
+   }
+
+   .sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+   }
+
+   .col2 h1{
+      color: rgb(230, 5, 43);
+   }
+   .col2 p{
+      font-size: 15px;
+   }
+
+.tab-titles{
+   display: flex;
+   margin: 20px 0 40px;
+}
+.tab-titles p{
+   margin-right: 20px;
+   font-size: 25px;
+   font-weight: 500;
+   cursor: pointer;
+   position: relative;
+}
+
+.tab-links::after{
+   content:'';
+   width: 0;
+   height: 3px;
+   background:rgb(230, 5, 43) ;
+   position: absolute;
+   left: 0;
+   bottom: -8px;
+   transition: 0.5px;
+}
+
+.tab-links.active-links::after{
+   width: 50%;
+}
+
+.tab-contents ul li{
+   list-style: none;
+   margin: 10px 0;
+}
+
+.tab-contents ul li span{
+   color: rgb(230, 5, 43);
+   font-size: 14px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}

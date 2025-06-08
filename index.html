@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="image\favicon.png" type="image/x-icon">
+    <title>Roshan-Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="image/logo.png" alt="logo" class="logo">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Project</a></li>
+                    <li><a href="">contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>Hi, I'm <span>Roshan</span><br>Yadav From Nepal</h1>
+                <span id="element"></span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- -----------------About--------------------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col1">
+                    <img src="image/aboutimg.jpg" alt="picture">
+                </div>
+                <div class="col2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I’m Roshan Yadav, a passionate Computer Science and Information Technology student with a deep
+                        interest in programming, problem-solving, and logical thinking. I enjoy turning complex
+                        challenges into simple solutions through code and continuously strive to expand my technical
+                        knowledge.
+
+                        <br>Beyond the screen, I’m an explorer at heart. In my free time, you’ll often find me visiting
+                        new places, experiencing different cultures, and seeking out new ideas that inspire both my
+                        personal life and professional growth.
+
+                        I believe in lifelong learning, curiosity, and embracing new opportunities—whether it’s through
+                        technology or real-world adventures
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-links" onclick="opentab('skills')">skills</p>
+                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li> <span>Frontend(Basic)</span><br>Html,CSS and javascript </li>
+                            <li> <span>Programming language</span><br>c,c++ and python </li>
+                            <li> <span>Version control</span><br>Git and Github</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Experience">
+                        <ul>
+                            <li> <span>Frontend Projects</span><br>Personal Portfolio website, Amazon clone, Daraz clone,Resturant Website</li>
+                            <li> <span>ASCOL IT Club — General Member</span><br>Participated in workshops, seminars, and collaborative projects; engaged with peers to enhance technical and teamwork skills. </li>
+                            <li> <span>Continuous Learning</span><br>Currently learning advanced Data Structures & Algorithms in C++, exploring Python</li>
+                        </ul>
+                    </div>
+                     <div class="tab-contents" id="Education">
+                        <ul>
+                            <li> <span>Intermediate in Computer Science</span><br>From Greenland International College,Biratnagar </li>
+                            <li> <span>Bsc.CSIT</span><br>From Amrit Campus,Lainchaur(B.s.2080 batch)</li>
+                            <li> <span>Certifications & Online Learning</span><br>Completed short online sessions and workshops on various IT topics conducted by different organizations and clubs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+  var typed = new Typed('#element', {
+            strings: ['Aspiring Developer', 'passionate about coding', 'a logic lover', 'CSIT student with big dreams'],
+            typeSpeed: 50,
+        });
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents= document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+for(tablink of tablinks){
+    tablink.classList.remove("active-links");
+}
+for(tabcontent of tabcontents){
+    tabcontent.classList.remove("active-tab");
+}
+event.currentTarget.classList.add("active-links");
+document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+
+</html>
