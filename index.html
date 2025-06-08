@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="image\favicon.png" type="image/x-icon">
     <title>Roshan-Developer Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,12 +17,14 @@
         <div class="container">
             <nav>
                 <img src="image/logo.png" alt="logo" class="logo">
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Project</a></li>
-                    <li><a href="">contact</a></li>
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="https://github.com/Ros-han-y">Project</a></li>
+                    <li><a href="#contact">contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
             </nav>
             <div class="header-text">
                 <h1>Hi, I'm <span>Roshan</span><br>Yadav From Nepal</h1>
@@ -67,41 +70,94 @@
                     </div>
                     <div class="tab-contents" id="Experience">
                         <ul>
-                            <li> <span>Frontend Projects</span><br>Personal Portfolio website, Amazon clone, Daraz clone,Resturant Website</li>
-                            <li> <span>ASCOL IT Club — General Member</span><br>Participated in workshops, seminars, and collaborative projects; engaged with peers to enhance technical and teamwork skills. </li>
-                            <li> <span>Continuous Learning</span><br>Currently learning advanced Data Structures & Algorithms in C++, exploring Python</li>
+                            <li> <span>Frontend Projects</span><br>Personal Portfolio website, Amazon clone, Daraz
+                                clone,Resturant Website</li>
+                            <li> <span>ASCOL IT Club — General Member</span><br>Participated in workshops, seminars, and
+                                collaborative projects; engaged with peers to enhance technical and teamwork skills.
+                            </li>
+                            <li> <span>Continuous Learning</span><br>Currently learning advanced Data Structures &
+                                Algorithms in C++, exploring Python</li>
                         </ul>
                     </div>
-                     <div class="tab-contents" id="Education">
+                    <div class="tab-contents" id="Education">
                         <ul>
-                            <li> <span>Intermediate in Computer Science</span><br>From Greenland International College,Biratnagar </li>
+                            <li> <span>Intermediate in Computer Science</span><br>From Greenland International
+                                College,Biratnagar </li>
                             <li> <span>Bsc.CSIT</span><br>From Amrit Campus,Lainchaur(B.s.2080 batch)</li>
-                            <li> <span>Certifications & Online Learning</span><br>Completed short online sessions and workshops on various IT topics conducted by different organizations and clubs.</li>
+                            <li> <span>Certifications & Online Learning</span><br>Completed short online sessions and
+                                workshops on various IT topics conducted by different organizations and clubs.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-  var typed = new Typed('#element', {
-            strings: ['Aspiring Developer', 'passionate about coding', 'a logic lover', 'CSIT student with big dreams'],
-            typeSpeed: 50,
-        });
+    <!-- ------------------contact-------------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>rooshanyadav0@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/193v5adCvt/"><i class="fa-brands fa-facebook"></i></a>
+                        <a
+                            href="https://www.linkedin.com/in/roshan-yadav-a2a0712a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/Ros-han-y"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="" class="btncv">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn">submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="copyright">&copy; 2025 Roshan. All rights reserved.</p>
+    </footer>
 
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents= document.getElementsByClassName("tab-contents");
-        function opentab(tabname){
-for(tablink of tablinks){
-    tablink.classList.remove("active-links");
-}
-for(tabcontent of tabcontents){
-    tabcontent.classList.remove("active-tab");
-}
-event.currentTarget.classList.add("active-links");
-document.getElementById(tabname).classList.add("active-tab");
+    <script>
+    // Typed.js initialization
+    var typed = new Typed('#element', {
+        strings: ['Aspiring Developer', 'passionate about coding', 'a logic lover', 'CSIT student with big dreams'],
+        typeSpeed: 50,
+        loop: true
+    });
+
+    // Tab functionality
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+        for (let tablink of tablinks) {
+            tablink.classList.remove("active-links");
         }
-    </script>
+        for (let tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-links");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    // Sidebar menu open/close functions
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu() {
+        sidemenu.style.right = "0";
+    }
+
+    function closemenu() {
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
 </body>
 
 </html>
